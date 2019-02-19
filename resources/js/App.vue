@@ -1,34 +1,33 @@
 <template>
     <div class="container">
-        <first-component v-on:childToParent="getDataOne" ref="childComponent"></first-component>
+        <first-component></first-component>
+        <second-component></second-component>
         <button @click="save">Save</button>
         <br>
-        <pre class="m-5">{{ persona }}</pre>
+        <pre class="m-5">{{ persona1 }}</pre>
+        <pre class="m-5">{{ persona2 }}</pre>
     </div>
 </template>
 
 <script>
 import FirstComponent from './components/FirstComponent.vue'
+import SecondComponent from './components/SecondComponent.vue'
 
 export default {
     components:{
-        'first-component' : FirstComponent
+        'first-component' : FirstComponent,
+        'second-component' : SecondComponent
     },
     data(){
         return{
-            persona: {}
+            persona1: {},
+            persona2: {}
         }
     },
     methods:{
-        getDataOne (value){
-            this.persona = value
-        },
         save(){
-            console.log('fasdf')
+            cosole.log('fasdf')
         }
-    },
-    mounted(){
-        this.$refs.childComponent.sendData()
     }
 }
 </script>
