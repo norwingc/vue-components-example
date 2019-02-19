@@ -3,8 +3,6 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur voluptatem delectus voluptate sit debitis consequuntur, similique, labore rem molestiae autem aspernatur quasi ad quod ipsa rerum nesciunt, tenetur maxime? Sunt!</p>
         <input type="text" v-model="persona.first_name">
         <input type="text" v-model="persona.last_name">
-
-        <button @click="sendData">Save</button>
     </div>
 </template>
 

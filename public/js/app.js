@@ -1772,6 +1772,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1785,7 +1786,13 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getDataOne: function getDataOne(value) {
       this.persona = value;
+    },
+    save: function save() {
+      console.log('fasdf');
     }
+  },
+  mounted: function mounted() {
+    this.$refs.childComponent.sendData();
   }
 });
 
@@ -1800,8 +1807,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -36874,7 +36879,12 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("first-component", { on: { childToParent: _vm.getDataOne } }),
+      _c("first-component", {
+        ref: "childComponent",
+        on: { childToParent: _vm.getDataOne }
+      }),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.save } }, [_vm._v("Save")]),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
@@ -36952,9 +36962,7 @@ var render = function() {
           _vm.$set(_vm.persona, "last_name", $event.target.value)
         }
       }
-    }),
-    _vm._v(" "),
-    _c("button", { on: { click: _vm.sendData } }, [_vm._v("Save")])
+    })
   ])
 }
 var staticRenderFns = []
